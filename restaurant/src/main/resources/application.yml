@@ -4,8 +4,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: 1
-    url: jdbc:mysql://127.0.0.1:3306/restaurant?useUnicode=true&characterEncoding=utf-8
+    password: Admin123.
+    url: jdbc:mysql://127.0.0.1:3306/restaurant?useUnicode=true&characterEncoding=utf-8&allowPublicKeyRetrieval=true&useSSL=false
     hikari:
       read-only: false
       connection-timeout: 30000
@@ -49,8 +49,8 @@ mybatis:
 mapper:
     mappers:
         - tk.mybatis.mapper.common.Mapper
-    mapper.not-empty: false
-    mapper.identity: MYSQL
+    not-empty: false
+    identity: MYSQL
 #pageHelper配置
 pagehelper:
     helperDialect: mysql
