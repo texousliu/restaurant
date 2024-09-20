@@ -18,8 +18,8 @@ spring:
   thymeleaf:
     cache: true
     mode: HTML
-    check-template: false
-    prefix: classpath:/templates
+#    check-template: false
+#    prefix: classpath:/templates
   #配置时间(接口将字符串映射到实体的date类型时会用到，不配置时间会有偏差)
   jackson:
     time-zone: GMT+8

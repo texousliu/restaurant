@@ -12,8 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/guest/client")
 public class ClientOrderController{
@@ -46,7 +44,7 @@ public class ClientOrderController{
     @GetMapping("/myOrder.html")
     public String viewOrderDetail(@RequestParam("orderCode") String orderCode, Model model){
         model.addAttribute("orderCode",orderCode);
-        return "/client/myOrder";
+        return "client/myOrder";
     }
 
     @PostMapping("/delGood.do")

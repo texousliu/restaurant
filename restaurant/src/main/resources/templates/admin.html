@@ -86,6 +86,11 @@
                                 <a th:href="@{/sysuser/console.html}" lay-href="home/console.html" target="mainFrame">控制台</a>
                             </dd>
                         </dl>
+                        <dl class="layui-nav-child">
+                            <dd data-name="desklist" class="layui-this">
+                                <a th:href="@{/guest/desklist.html}" lay-href="/guest/desklist.html" target="mainFrame">点单</a>
+                            </dd>
+                        </dl>
                     </li>
                     <!--动态菜单-->
                     <th:block th:each="menu:${menuList}">

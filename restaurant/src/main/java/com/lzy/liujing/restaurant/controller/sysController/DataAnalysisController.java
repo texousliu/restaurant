@@ -35,7 +35,7 @@ public class DataAnalysisController{
      */
     @GetMapping("/salesStatistics.html")
     public String salesStatistics(){
-        return "/chart/salesStatistics";
+        return "chart/salesStatistics";
     }
 
     /**

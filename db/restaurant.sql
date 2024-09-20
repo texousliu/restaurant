@@ -745,6 +745,8 @@ INSERT INTO `sys_menu` VALUES (44, '收银业务', 0, NULL, 1, '', '', 'layui-ic
 INSERT INTO `sys_menu` VALUES (45, '收款', 44, '44,', 1, 'counter:view', '/counter/counterPage.html', NULL, 4400, NULL, 0);
 INSERT INTO `sys_menu` VALUES (47, '删除', 15, '14,15', 1, 'manage:del', NULL, NULL, 6310, NULL, 0);
 INSERT INTO `sys_menu` VALUES (48, '销售统计', 27, '27，', 1, 'salesStatistics:view', '/analysis/salesStatistics.html', NULL, 5850, NULL, 0);
+INSERT INTO `sys_menu` VALUES (49, '收银台', 0, '', 1, '', NULL, 'layui-icon-form', 50000, '', 0);
+INSERT INTO `sys_menu` VALUES (50, '顾客下单', 49, '49,', 1, '', '/guest/desklist.html', NULL, 80000, NULL, 0);
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -856,6 +858,8 @@ INSERT INTO `sys_role_menu` VALUES (4, 44);
 INSERT INTO `sys_role_menu` VALUES (4, 45);
 INSERT INTO `sys_role_menu` VALUES (1, 47);
 INSERT INTO `sys_role_menu` VALUES (1, 48);
+INSERT INTO `sys_role_menu` VALUES (1, 49);
+INSERT INTO `sys_role_menu` VALUES (1, 50);
 
 -- ----------------------------
 -- Table structure for sys_user

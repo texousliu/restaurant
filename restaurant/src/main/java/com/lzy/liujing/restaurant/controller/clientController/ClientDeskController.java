@@ -38,7 +38,7 @@ public class ClientDeskController{
         desk.setDeskCode(deskCode);
         deskService.logout(desk);
         session.removeAttribute("deskCode");
-        return "redirect:/guest/desklist.html";
+        return "redirect:guest/desklist.html";
     }
 
     @GetMapping("/desklist.html")
@@ -47,18 +47,18 @@ public class ClientDeskController{
         customPageInfo.setPageSize(15);
         customPageInfo.setPageNum(pageNum);
         model.addAttribute("page",deskService.findPage(customPageInfo));
-        return "/client/deskPage";
+        return "client/deskPage";
     }
 
     @GetMapping("/main.html")
     private String clientMain(Model model){
         model.addAttribute("categoryList",goodsCategoryService.findAll());
-        return "/client/main";
+        return "client/main";
     }
 
     @GetMapping("/goodspage.thml")
     private String goodsPage(){
-        return "/client/goodsPage";
+        return "client/goodsPage";
     }
 
     /**
@@ -73,7 +73,7 @@ public class ClientDeskController{
             categoryId=null;
         }
         model.addAttribute("categoryId",categoryId);
-        return "/client/goodsPage";
+        return "client/goodsPage";
     }
 
     /**
