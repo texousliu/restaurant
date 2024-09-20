@@ -1,4 +1,3 @@
-
 spring:
   #数据源配置
   datasource:
@@ -17,10 +16,13 @@ spring:
     rollback-on-commit-failure: true
   #去掉theymeleaf的HTML5效验
   thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
+    cache: true
+    mode: HTML
+    check-template: false
+    prefix: classpath:/templates
   #配置时间(接口将字符串映射到实体的date类型时会用到，不配置时间会有偏差)
-  jackson: time-zone=GMT+8
+  jackson:
+    time-zone: GMT+8
   #表示所有的访问都经过静态资源路径
   mvc:
     static-path-pattern: /**
@@ -34,29 +36,30 @@ spring:
 logging:
   level:
     root: info
+    org.thymeleaf.engine: trace
     com.lzy.liujing.restaurant: debug
 
 #配置mybatis
 mybatis:
-#配置驼峰命名转换
+  #配置驼峰命名转换
   configuration:
-     map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: true
   #配置mapping文件路径
   mapper-locations: classpath:/mappings/**/*.xml
   type-aliases-package: tk.mybatis.springboot.model
 
 #mapper插件配置
 mapper:
-    mappers:
-        - tk.mybatis.mapper.common.Mapper
-    not-empty: false
-    identity: MYSQL
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+  not-empty: false
+  identity: MYSQL
 #pageHelper配置
 pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 #配置项目访问端口和地址
 server:
   port: 8181
@@ -64,4 +67,4 @@ server:
     context-path: /restaurant
 
 web:
-  upload-image-path: D:/restaurant/upload
+  upload-image-path: D:/Documents/Workspaces/Java/Extention/restaurant/images/restaurant/upload
